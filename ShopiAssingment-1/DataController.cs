@@ -22,9 +22,9 @@ namespace ShopiAssingment_1
         public async Task<string> Index()
         {
             ProductList.Clear(); //reset list
-
-            using (var reader = new StreamReader("C:/Users/Burak/source/repos/WebApplication1/WebApplication1/App_Data/sample.csv"))
-
+            string basePath = AppContext.BaseDirectory.Substring(0, AppContext.BaseDirectory.IndexOf("bin"));
+           
+            using (var reader = new StreamReader(basePath + "/Assets/sample.csv"))
             using (var csv = new CsvReader(reader))
             {
                 csv.Configuration.Delimiter = "|";
@@ -39,13 +39,13 @@ namespace ShopiAssingment_1
                     var record = csv.GetRecord<Product>();
                     ProductList.Add(record); //Final list
                 }
-
             }
 
             string serializedObject = JsonConvert.SerializeObject(new
             {
                 ProductList = ProductList,
             });
+
             return serializedObject;
         }
 
