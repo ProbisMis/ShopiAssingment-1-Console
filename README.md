@@ -1,4 +1,5 @@
 ## ShopiAssingment-1-Console Application ##
+Simple communication with server. Post new list of products to server. 
 
 * clone the project
 * cd to directory
@@ -6,7 +7,7 @@
 
 ### Packages ###
 
-* [CsvHelper] forparsing  `WebApplication1/App_Data/sampe.csv`
+* [CsvHelper] for parsing  `sample.csv`
 * [Newtonsoft Json] for serializing Product object
 
 
